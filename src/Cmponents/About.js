@@ -1,77 +1,87 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 
-export default function About() {
-    const [myStyle, setmyStyle]= useState({
-        color: 'black',
-        backgroundColor: 'white'
-    })
-    const [btntext,setbtntext] = useState("Enable Dark Mode")
-   const toggleStyle = ()=>{
-        if(myStyle.color === 'black')
-        {
-            setmyStyle({
-                color:'white',
-                backgroundColor: 'black',
-                // border:'1px solid white'
-                
-            })
-            setbtntext("Enable Light Mode");
-        }
-        else{
-            setmyStyle({
-                color:'black',
-                backgroundColor: 'white',
-                
-            })
-            setbtntext("Enable Dark Mode");
+export default function About(props) {
+    // const [myStyle, setmyStyle]= useState({
+    //     color: 'black',
+    //     backgroundColor: 'white'
+    // })
+    //     const [btntext,setbtntext] = useState("Enable Dark Mode")
+    //    const toggleStyle = ()=>{
+    //         if(myStyle.color === 'black')
+    //         {
+    //             setmyStyle({
+    //                 color:'white',
+    //                 backgroundColor: 'black',
+    //                 // border:'1px solid white'
+
+    //             })
+    //             setbtntext("Enable Light Mode");
+    //         }
+    //         else{
+    //             setmyStyle({
+    //                 color:'black',
+    //                 backgroundColor: 'white',
+
+    //             })
+    //             setbtntext("Enable Dark Mode");
+    //     }
+    //}
+    let myStyle = {
+        color: props.mode === 'light' ? 'black' : 'white',
+        backgroundColor: props.mode === 'dark' ? 'black' : 'white'
     }
-}
-    
-  return (
+
+    return (
         <div className='container' style={myStyle}>
             <h2 className='my-3'>About Us</h2>
-        <div className="accordion" id="accordionExample">
-    <div className="accordion-item" style={myStyle}>
-        <h2 className="accordion-header" id="headingOne">
-        <button className="accordion-button" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            Accordion Item #1
-        </button>
-        </h2>
-        <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-        <div className="accordion-body">
-            <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classNamees that we use to style each element. These classNamees control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-        </div>
-        </div>
-    </div>
-    <div className="accordion-item" style={myStyle}>
-        <h2 className="accordion-header" id="headingTwo">
-        <button className="accordion-button collapsed" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            Accordion Item #2
-        </button>
-        </h2>
-        <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-        <div className="accordion-body">
-            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classNamees that we use to style each element. These classNamees control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-        </div>
-        </div>
-    </div>
-    <div className="accordion-item" style={myStyle}>
-        <h2 className="accordion-header" id="headingThree">
-        <button className="accordion-button collapsed" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            Accordion Item #3
-        </button>
-        </h2>
-        <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-        <div className="accordion-body">
-            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classNamees that we use to style each element. These classNamees control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-        </div>
-        </div>
-    </div>
-    </div>
-    <div className="container my-3">
+            <div className="accordion" id="accordionExample">
+                <div className="accordion-item" style={myStyle}>
+                    <h2 className="accordion-header" id="headingOne">
+                        <button className="accordion-button" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            About Website 
+                        </button>
+                    </h2>
+                    <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div className="accordion-body">
+                            This website helps user to convert their text to uppercase or lowercase , you can copy the 
+                            modified text from this website. You can get various informations like no. of words , no. of characters etc
+                            in the this website.
+                        </div>
+                    </div>
+                </div>
+                <div className="accordion-item" style={myStyle}>
+                    <h2 className="accordion-header" id="headingTwo">
+                        <button className="accordion-button collapsed" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Browser Compatible
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div className="accordion-body">
+                            This website can be run in any web browser , any device without any issue.
+                        </div>
+                    </div>
+                </div>
+                <div className="accordion-item" style={myStyle}>
+                    <h2 className="accordion-header" id="headingThree">
+                        <button className="accordion-button collapsed" style={myStyle} type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Developer Infromation
+                        </button>
+                    </h2>
+                    <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                        <div className="accordion-body">
+                            <strong>Developer:  </strong>  Akash Kumar Verma <br></br>
+                            <strong>Email:</strong>  akashkumarverma369@gmail.com <br></br>
+                            <strong>Github:</strong><a href="https://github.com/Akash-095">   https://github.com/Akash-095</a> <br></br>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {/* <div className="container my-3">
     <button type="button" onClick={toggleStyle} className="btn btn-primary">{btntext}</button>
-    </div>
-    
+    </div> */}
+
         </div>
-  )
+    )
 }
