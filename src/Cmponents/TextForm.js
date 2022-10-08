@@ -62,7 +62,7 @@ export default function TextForm(props)
 <button  disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleClearClick}>Clear Text</button>
 <button  disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleCopy}>Copy</button>
 <button  disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleExtraSpace}>Remove Extra Spaces</button>
-<button  disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleReplace}>Replce-Text</button>
+<button  disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={handleReplace}>Replace-Text</button>
 
 </div>
 <div className="container my-3" style={{color:props.mode==='light'?'black':'white'}}>
